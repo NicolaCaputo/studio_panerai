@@ -45,9 +45,10 @@
       background: var(--teal); color: var(--white); border: none; padding: .65rem 1.4rem;
       border-radius: 50px; font-size: .88rem; font-weight: 600; cursor: pointer;
       text-decoration: none; transition: background .25s, transform .2s;
-      display: flex; align-items: center; gap: .4rem;
+      display: flex; align-items: center; gap: .4rem; white-space: nowrap; flex-shrink: 0;
     }
     .nav-cta:hover { background: var(--teal-d); transform: translateY(-1px); }
+    .nav-cta-short { display: none; }
     .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; }
     .burger span { width: 24px; height: 2px; background: var(--black); border-radius: 2px; transition: .3s; }
 
@@ -390,6 +391,9 @@
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .burger { display: flex; }
+      .nav-cta { padding: .5rem 1rem; font-size: .78rem; gap: .25rem; }
+      .nav-cta-full { display: none; }
+      .nav-cta-short { display: inline; }
       nav.mobile-open .nav-links {
         display: flex; flex-direction: column; position: fixed; top: 76px; left: 0; right: 0;
         background: var(--white); padding: 1.5rem 5vw 2rem; border-top: 1px solid var(--teal-l);
@@ -588,7 +592,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
-  <a href="https://www.miodottore.it/cesare-bruno-panerai/dentista-ortodontista-posturologo/taranto" target="_blank" rel="noopener" class="nav-cta">Prenota una Visita &rarr;</a>
+  <a href="https://www.miodottore.it/cesare-bruno-panerai/dentista-ortodontista-posturologo/taranto" target="_blank" rel="noopener" class="nav-cta"><span class="nav-cta-full">Prenota una Visita</span><span class="nav-cta-short">Prenota</span> &rarr;</a>
   <button class="burger" id="burger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
